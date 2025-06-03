@@ -24,7 +24,8 @@ export default function Home() {
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Username</th>
       <th scope="col">Email</th>
       <th scope="col">Action</th>
       
@@ -34,6 +35,7 @@ export default function Home() {
     {users.map((user, key)=>(
     <tr >
       <th scope="row" key={key}>{key+1}</th>
+      <td>{user.name}</td>
       <td>{user.username}</td>
       <td>{user.email}</td>
       <td>

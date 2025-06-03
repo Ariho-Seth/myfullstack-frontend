@@ -8,11 +8,13 @@ export default function AddUser() {
     const navigate = useNavigate();
 
     const [user, setUser] = useState({
+
         name: "",
+        username: "",
         email: ""
     });
 
-    const { name, email } = user;
+    const { name, username, email } = user;
 
     const handleOnChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value })
@@ -32,14 +34,26 @@ export default function AddUser() {
 
                     <form onSubmit={(e) => handleSubmit(e)}>
                         <h2 className='text-center m-4'>Register User</h2>
-                        <div className='mb-3'>
 
-                            <label htmlFor='name' className='form-label'>User name</label>
+<div className='mb-3'>
+
+                            <label htmlFor='name' className='form-label'>First name</label>
                             <input type='text'
                                 className='form-control'
                                 placeholder='Type your name here'
                                 name='name'
                                 value={name}
+                                onChange={(e) => handleOnChange(e)} />
+                        </div>
+
+                        <div className='mb-3'>
+
+                            <label htmlFor='username' className='form-label'>User name</label>
+                            <input type='text'
+                                className='form-control'
+                                placeholder='Type your username here'
+                                name='username'
+                                value={username}
                                 onChange={(e) => handleOnChange(e)} />
                         </div>
                         <div className='mb-3'>
@@ -50,7 +64,7 @@ export default function AddUser() {
                                 name='email' value={email}
                                 onChange={(e) => handleOnChange(e)} />
                         </div>
-                        <button type='submit' className='btn btn-outline-primary'>Submit</button>
+                        <button type='submit' className='btn btn-outline-primary mx-5'>Submit</button>
                         <Link to="/" className='btn btn-danger'>Cancel</Link>
                     </form>
                 </div>
